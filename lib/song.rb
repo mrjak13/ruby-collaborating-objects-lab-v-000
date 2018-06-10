@@ -1,5 +1,6 @@
 class Song
   attr_accessor :name, :artist
+  attr_reader :artist_name
 
   def initialize(name)
     @name = name
@@ -18,6 +19,6 @@ class Song
   end
 
   def artist_name=(file_name)
-      @artist_name= Artist.find_or_create_by_name(file_name)
+      @artist_name = Artist.find_or_create_by_name(file_name)
   end
 end
