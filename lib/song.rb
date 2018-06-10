@@ -1,6 +1,6 @@
 class Song
   attr_accessor :name, :artist
-  attr_reader :artist_name
+  # attr_reader :artist_name
 
   def initialize(name)
     @name = name
@@ -12,13 +12,13 @@ class Song
     file_song = filename.split(" - ")[1]
     name = self.new(file_song)
     file_artist = filename.split(" - ")[0]
-    name.artist = artist_name=(file_artist)
+    name.artist_name=(file_artist)
     name
     # binding.pry
 
   end
 
   def artist_name=(file_name)
-      @artist_name = Artist.find_or_create_by_name(file_name)
+      Artist.find_or_create_by_name(file_name)
   end
 end
